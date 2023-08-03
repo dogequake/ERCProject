@@ -1,0 +1,70 @@
+﻿@using ERCWeb.Helpers;
+@model ERCWeb.Models.LcModel
+@{
+    var NewNumLc = CreateNumLc.GenNumLc();
+}
+
+
+<h1>Добавление нового ЛС</h1>
+
+<h4>Номер нового ЛС - @NewNumLc</h4>
+
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <input asp-for="NumLc" type="hidden" value="@NewNumLc" class="form-control" />
+                <span asp-validation-for="NumLc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Address" class="control-label">Адрес: </label>
+                <input asp-for="Address" class="form-control" />
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="DateStart" type="hidden" value="MjAyMi0wNS0xMg==" class="form-control" />
+                <span asp-validation-for="DateStart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AreaApart" class="control-label">Площадь: </label>
+                <input type="number" min="22" asp-for="AreaApart" class="form-control" />
+                <span asp-validation-for="AreaApart" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resident.LastName" class="control-label">Фамилия: </label>
+                <input asp-for="Resident.LastName" class="form-control" />
+                <span asp-validation-for="Resident.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resident.Name" class="control-label">Имя: </label>
+                <input asp-for="Resident.Name" class="form-control" />
+                <span asp-validation-for="Resident.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resident.Patronymic" class="control-label">Отчество: </label>
+                <input asp-for="Resident.Patronymic" class="form-control" />
+                <span asp-validation-for="Resident.Patronymic" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Resident.Birthday"  class="control-label">Дата рождения: </label>
+                
+                <input type="date" asp-for="Resident.Birthday" value="MjAyMi0wNS0xMg==" class="form-control" />
+                <span asp-validation-for="Resident.Birthday" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input asp-for="Resident.DateStartResidence" type="hidden" value="MjAyMi0wNS0xMg==" class="form-control" />
+                <span asp-validation-for="Resident.DateStartResidence" class="text-danger"></span>
+            </div>
+            <br />
+            <div class="form-group">
+                <input asp-action="CreateNew" type="submit" value="Отправить" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <br />
+    <a asp-action="Index">Вернутся </a>
+</div>

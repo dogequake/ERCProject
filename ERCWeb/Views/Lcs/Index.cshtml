@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ERCWeb.Models.LcModel>
+
+
+<br />
+<br />
+<table class="table">
+    <thead>
+        <tr>
+            <td><input type="submit" name="send" value="ТОЛЬКО С ПРОЖИВАЮЩИМИ" /></td>
+            <td>Поиск по открытию ЛС: <input /></td>
+            <td>Поиск по Фамилии: <input /></td>
+            <td>Поиск по адресу: <input /></td>
+        </tr>
+        <tr>
+            <th>Id лицевого счета</th>
+            <th>Номер лицевого счета</th>
+            <th>Адрес</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                <td>@Html.DisplayFor(modelItem => item.NumLc)</td>
+                <td>@Html.DisplayFor(modelItem => item.Address)</td>
+                <td><a asp-action="InfoAboutLC" asp-route-id=@item.Id>Информация о ЛС</a></td>
+                <td><a asp-action="Edit" asp-route-id="@item.Id">Редактировать ЛС</a></td>
+                <td><a class="btn btn-danger"asp-action="DeleteLC" asp-route-id="@item.Id">Удалить ЛС</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a class="btn btn-primary" asp-action="Create">Добавить новый ЛС</a>
+</div>

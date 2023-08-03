@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERCApi", "ERCApi\ERCApi.csproj", "{3F3BC9FA-3EBE-4235-B109-167CB4C101E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ERCWeb", "ERCWeb\ERCWeb.csproj", "{BB43F869-05F8-4814-AE54-7D5069C066F0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F3BC9FA-3EBE-4235-B109-167CB4C101E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F3BC9FA-3EBE-4235-B109-167CB4C101E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F3BC9FA-3EBE-4235-B109-167CB4C101E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F3BC9FA-3EBE-4235-B109-167CB4C101E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB43F869-05F8-4814-AE54-7D5069C066F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB43F869-05F8-4814-AE54-7D5069C066F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB43F869-05F8-4814-AE54-7D5069C066F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB43F869-05F8-4814-AE54-7D5069C066F0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB86A66C-7B9C-45E8-92C4-6548C88A6369}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,59 @@
+﻿@model ERCWeb.Models.LcModel
+@{
+    DateTime start = new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc);
+
+    string FIO = Model.Resident.LastName + "." + Model.Resident.Name.Substring(0, 1) + "." + Model.Resident.Patronymic.Substring(0, 1);
+
+    DateTime DateStartResidence = DateTime.ParseExact(Model.Resident.DateStartResidence, "yyyy-MM-dd",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+
+    long PeriodOfResidence;
+    if (Model.Resident.DateEndResidence == null)
+    {
+        DateTime DateEndResidence = DateTime.Now;
+        PeriodOfResidence = (DateEndResidence - DateStartResidence).Ticks;
+    }
+    else
+    {
+        DateTime DateEndResidence = DateTime.ParseExact(Model.Resident.DateEndResidence, "yyyy-MM-dd",
+                                       System.Globalization.CultureInfo.InvariantCulture);
+        PeriodOfResidence = (DateEndResidence - DateStartResidence).Ticks;
+    }
+    DateTime dt = new DateTime(PeriodOfResidence);
+}
+
+<br />
+<br />
+<h1>Вся информация о лицевом счете</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Номер лицевого счета</th>
+            <th>Адрес</th>
+            <th>Дата начала</th>
+            <th>Дата окончания</th>
+            <th>Площадь помещения</th>
+            <th>Ф.И.О.</th>
+            <th>Дата рождения</th>
+            <th>Период проживания</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.NumLc</td>
+            <td>@Model.Address</td>
+            <td>@Model.DateStart</td>
+            <td>@Model.DateEnd</td>
+            <td>@Model.AreaApart</td>
+            <td>@FIO</td>
+            <td>@Model.Resident.Birthday</td>
+            <td>@dt.Year лет</td>
+            <td></td>
+        </tr>
+    </tbody>
+    
+</table>
+<div>
+    <a >Редактировать</a>
+    <a asp-action="Index">Вернутся к списку</a>
+</div>
